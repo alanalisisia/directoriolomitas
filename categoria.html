@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoría - Directorio Comercial Lomitas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-store"></i> Directorio Lomitas</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#destacados" class="nav-link">Destacados</a>
+                    <a href="index.html#categorias" class="nav-link active">Categorías</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="category-page">
+            <div class="container">
+                <div class="category-header">
+                    <h1 id="categoryTitle">Categoría</h1>
+                    <p id="categoryDescription">Descubre los mejores negocios de esta categoría</p>
+                </div>
+                
+                <div class="businesses-grid" id="businessesGrid">
+                    <!-- Los negocios se cargarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Directorio Comercial Lomitas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Configuración de categorías
+        const categoryConfig = {
+            'droguerias': {
+                title: 'Droguerías',
+                description: 'Farmacias y establecimientos de salud donde puedes encontrar medicamentos, productos farmacéuticos y artículos de cuidado personal.',
+                icon: 'fas fa-pills'
+            },
+            'supermercados': {
+                title: 'Supermercados',
+                description: 'Establecimientos donde puedes hacer tus compras de alimentos, productos del hogar y artículos de primera necesidad.',
+                icon: 'fas fa-shopping-cart'
+            },
+            'papelerias': {
+                title: 'Papelerías',
+                description: 'Tiendas especializadas en materiales de oficina, útiles escolares, libros y servicios de impresión y fotocopiado.',
+                icon: 'fas fa-pen'
+            },
+            'comida-rapida': {
+                title: 'Comida Rápida',
+                description: 'Restaurantes especializados en servicio rápido con hamburguesas, pizzas, pollo y otros platos para llevar.',
+                icon: 'fas fa-hamburger'
+            },
+            'restaurantes': {
+                title: 'Restaurantes',
+                description: 'Establecimientos gastronómicos donde puedes disfrutar de una experiencia culinaria completa y variada.',
+                icon: 'fas fa-utensils'
+            },
+            'otros': {
+                title: 'Otros Establecimientos',
+                description: 'Diversos servicios y negocios que complementan la oferta comercial de la zona.',
+                icon: 'fas fa-store-alt'
+            }
+        };
+
+        // Función para actualizar el título y descripción de la categoría
+        function updateCategoryInfo(category) {
+            const config = categoryConfig[category];
+            if (config) {
+                document.getElementById('categoryTitle').textContent = config.title;
+                document.getElementById('categoryDescription').textContent = config.description;
+                document.title = `${config.title} - Directorio Lomitas`;
+            }
+        }
+
+        // Inicializar página de categoría
+        document.addEventListener('DOMContentLoaded', function() {
+            const category = new URLSearchParams(window.location.search).get('cat');
+            if (category && categoryConfig[category]) {
+                updateCategoryInfo(category);
+                loadBusinessesByCategory(category);
+            } else {
+                // Redirigir a la página principal si no hay categoría válida
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

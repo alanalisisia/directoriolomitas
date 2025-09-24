@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Comercial - Lomitas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-store"></i> Directorio Lomitas</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="#destacados" class="nav-link">Destacados</a>
+                    <a href="#categorias" class="nav-link">Categorías</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Encuentra tu negocio favorito</h1>
+                <p>Lomitas, Campo Verde, La Pradera, Trapiches, Villa Graciela y otros conjuntos.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar negocios..." id="searchInput">
+                    <button type="button" onclick="searchBusinesses()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Menu -->
+        <section id="categorias" class="categories">
+            <div class="container">
+                <h2>Categorías</h2>
+                <div class="categories-grid">
+                    <a href="categoria.html?cat=droguerias" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3>Droguerías</h3>
+                        <p>Farmacias y productos de salud</p>
+                    </a>
+                    <a href="categoria.html?cat=supermercados" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Supermercados</h3>
+                        <p>Alimentos y productos del hogar</p>
+                    </a>
+                    <a href="categoria.html?cat=papelerias" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <h3>Papelerías</h3>
+                        <p>Materiales de oficina y educación</p>
+                    </a>
+                    <a href="categoria.html?cat=comida-rapida" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <h3>Comida Rápida</h3>
+                        <p>Restaurantes de comida rápida</p>
+                    </a>
+                    <a href="categoria.html?cat=restaurantes" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Restaurantes</h3>
+                        <p>Restaurantes y gastronomía</p>
+                    </a>
+                    <a href="categoria.html?cat=otros" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-store-alt"></i>
+                        </div>
+                        <h3>Otros</h3>
+                        <p>Otros establecimientos</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Businesses -->
+        <section id="destacados" class="featured">
+            <div class="container">
+                <h2>Negocios Destacados</h2>
+                <div class="businesses-grid" id="featuredBusinesses">
+                    <!-- Los negocios destacados se cargarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Directorio Comercial Lomitas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

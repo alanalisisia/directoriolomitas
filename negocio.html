@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negocio - Directorio Comercial Lomitas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-store"></i> Directorio Lomitas</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#destacados" class="nav-link">Destacados</a>
+                    <a href="index.html#categorias" class="nav-link">Categorías</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="business-detail">
+            <div class="container">
+                <a href="javascript:history.back()" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver
+                </a>
+                
+                <div class="business-hero">
+                    <div class="business-logo-large" id="businessLogo">
+                        <!-- Logo del negocio -->
+                    </div>
+                    <div class="business-details">
+                        <h1 id="businessName">Nombre del Negocio</h1>
+                        <p class="category" id="businessCategory">Categoría</p>
+                        <p class="phone" id="businessPhone">
+                            <i class="fas fa-phone"></i>
+                            Teléfono
+                        </p>
+                        <div class="business-rating" id="businessRating">
+                            <!-- Calificación -->
+                        </div>
+                        <p class="description" id="businessDescription">
+                            Descripción del negocio...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-info-circle"></i> Información de Contacto</h3>
+                    <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> <span id="contactPhone">-</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> <span id="contactAddress">Calle Principal #123, Lomitas</span></p>
+                    <p><i class="fas fa-clock"></i> <strong>Horarios:</strong> <span id="contactHours">Lunes a Viernes: 8:00 AM - 8:00 PM<br>Sábados: 8:00 AM - 6:00 PM<br>Domingos: 9:00 AM - 4:00 PM</span></p>
+                    <p><i class="fas fa-globe"></i> <strong>Sitio Web:</strong> <span id="contactWebsite">www.ejemplo.com</span></p>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-star"></i> Servicios Destacados</h3>
+                    <ul id="servicesList">
+                        <!-- Servicios se cargarán dinámicamente -->
+                    </ul>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-marked-alt"></i> Ubicación</h3>
+                    <div style="background: #f0f0f0; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                            <p>Mapa interactivo del negocio</p>
+                            <p><small>La ubicación exacta se mostrará aquí</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-comments"></i> Comentarios y Reseñas</h3>
+                    <div id="reviewsList">
+                        <!-- Reseñas se cargarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Directorio Comercial Lomitas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Datos adicionales para cada negocio
+        const businessDetails = {
+            'drogueria-1': {
+                address: 'Calle 15 #23-45, Lomitas',
+                hours: '24 horas - Todos los días',
+                website: 'www.farmaciasanrafael.com',
+                services: ['Venta de medicamentos', 'Consulta farmacéutica', 'Productos de salud', 'Servicio a domicilio'],
+                reviews: [
+                    { name: 'María González', rating: 5, comment: 'Excelente servicio y medicamentos de calidad.' },
+                    { name: 'Carlos Ruiz', rating: 4, comment: 'Muy buena atención y precios competitivos.' }
+                ]
+            },
+            'drogueria-2': {
+                address: 'Avenida Principal #67-89, Lomitas',
+                hours: 'Lunes a Viernes: 7:00 AM - 10:00 PM<br>Sábados y Domingos: 8:00 AM - 9:00 PM',
+                website: 'www.drogueracentral.com',
+                services: ['Farmacia', 'Productos de cuidado personal', 'Servicio a domicilio', 'Consultas médicas'],
+                reviews: [
+                    { name: 'Ana Martínez', rating: 4, comment: 'Buena variedad de productos y atención rápida.' }
+                ]
+            },
+            'drogueria-3': {
+                address: 'Carrera 8 #12-34, Lomitas',
+                hours: 'Lunes a Sábado: 8:00 AM - 8:00 PM<br>Domingos: 9:00 AM - 6:00 PM',
+                website: 'www.farmaciaelbuenpastor.com',
+                services: ['Medicamentos genéricos', 'Consulta farmacéutica gratuita', 'Productos naturales', 'Vacunas'],
+                reviews: [
+                    { name: 'Pedro López', rating: 5, comment: 'El mejor servicio farmacéutico de la zona.' },
+                    { name: 'Laura Sánchez', rating: 5, comment: 'Consultas muy profesionales y medicamentos de calidad.' }
+                ]
+            },
+            'super-1': {
+                address: 'Calle 20 #45-67, Lomitas',
+                hours: 'Lunes a Domingo: 7:00 AM - 10:00 PM',
+                website: 'www.supermercadoelahorro.com',
+                services: ['Productos frescos', 'Despensa familiar', 'Productos importados', 'Servicio a domicilio'],
+                reviews: [
+                    { name: 'Roberto Díaz', rating: 4, comment: 'Los mejores precios de la zona.' },
+                    { name: 'Carmen Vega', rating: 4, comment: 'Excelente variedad de productos frescos.' }
+                ]
+            },
+            'super-2': {
+                address: 'Avenida 3 #78-90, Lomitas',
+                hours: 'Lunes a Sábado: 8:00 AM - 8:00 PM<br>Domingos: 9:00 AM - 7:00 PM',
+                website: 'www.mercadofamiliar.com',
+                services: ['Frutas y verduras frescas', 'Carnes y lácteos', 'Productos del hogar', 'Panadería'],
+                reviews: [
+                    { name: 'Miguel Torres', rating: 4, comment: 'Muy buena calidad en frutas y verduras.' }
+                ]
+            },
+            'super-3': {
+                address: 'Calle 25 #12-56, Lomitas',
+                hours: '24 horas - Todos los días',
+                website: 'www.supertienda247.com',
+                services: ['Atención 24 horas', 'Productos básicos', 'Servicio express', 'Cajeros automáticos'],
+                reviews: [
+                    { name: 'Sandra Morales', rating: 4, comment: 'Perfecto para compras de emergencia a cualquier hora.' }
+                ]
+            },
+            'papeleria-1': {
+                address: 'Calle 10 #34-56, Lomitas',
+                hours: 'Lunes a Viernes: 7:30 AM - 7:00 PM<br>Sábados: 8:00 AM - 6:00 PM',
+                website: 'www.papeleriaelestudiante.com',
+                services: ['Útiles escolares', 'Libros y cuadernos', 'Material de oficina', 'Regalos estudiantiles'],
+                reviews: [
+                    { name: 'Elena Castro', rating: 5, comment: 'Todo lo que necesitan mis hijos para el colegio.' }
+                ]
+            },
+            'papeleria-2': {
+                address: 'Carrera 5 #78-90, Lomitas',
+                hours: 'Lunes a Viernes: 8:00 AM - 8:00 PM<br>Sábados: 8:00 AM - 5:00 PM',
+                website: 'www.oficentrolomitas.com',
+                services: ['Fotocopias e impresiones', 'Encuadernación', 'Servicios de oficina', 'Papelería corporativa'],
+                reviews: [
+                    { name: 'Andrés Jiménez', rating: 5, comment: 'Excelente servicio de impresiones y encuadernación.' },
+                    { name: 'Patricia Rojas', rating: 4, comment: 'Muy buena atención y precios justos.' }
+                ]
+            },
+            'papeleria-3': {
+                address: 'Avenida 7 #23-45, Lomitas',
+                hours: 'Lunes a Sábado: 8:00 AM - 7:00 PM',
+                website: 'www.papelytinta.com',
+                services: ['Artículos de oficina', 'Material escolar', 'Regalos corporativos', 'Servicios de diseño'],
+                reviews: [
+                    { name: 'Fernando Herrera', rating: 4, comment: 'Buena calidad en materiales de oficina.' }
+                ]
+            },
+            'comida-1': {
+                address: 'Calle 30 #45-67, Lomitas',
+                hours: 'Lunes a Domingo: 10:00 AM - 11:00 PM',
+                website: 'www.burgerkinglomitas.com',
+                services: ['Hamburguesas', 'Papas fritas', 'Bebidas', 'Servicio a domicilio'],
+                reviews: [
+                    { name: 'Diego Ramírez', rating: 4, comment: 'Las mejores hamburguesas de la zona.' },
+                    { name: 'Valentina Silva', rating: 4, comment: 'Servicio rápido y comida deliciosa.' }
+                ]
+            },
+            'comida-2': {
+                address: 'Carrera 12 #34-56, Lomitas',
+                hours: 'Lunes a Domingo: 11:00 AM - 10:00 PM',
+                website: 'www.pizzaexpress.com',
+                services: ['Pizzas artesanales', 'Empanadas', 'Comida rápida', 'Delivery 24/7'],
+                reviews: [
+                    { name: 'Gabriel Morales', rating: 5, comment: 'Las pizzas más deliciosas de Lomitas.' }
+                ]
+            },
+            'comida-3': {
+                address: 'Avenida 15 #67-89, Lomitas',
+                hours: 'Lunes a Domingo: 12:00 PM - 10:00 PM',
+                website: 'www.chickenexpress.com',
+                services: ['Pollo frito', 'Alitas', 'Acompañamientos', 'Combo familiares'],
+                reviews: [
+                    { name: 'Isabella Torres', rating: 4, comment: 'Pollo muy sabroso y precios económicos.' }
+                ]
+            },
+            'restaurante-1': {
+                address: 'Calle 40 #78-90, Lomitas',
+                hours: 'Lunes a Domingo: 12:00 PM - 11:00 PM',
+                website: 'www.restaurantelaparrilla.com',
+                services: ['Carnes a la parrilla', 'Platos típicos', 'Ambiente familiar', 'Reservas'],
+                reviews: [
+                    { name: 'Alejandro Vargas', rating: 5, comment: 'Excelente comida y ambiente familiar.' },
+                    { name: 'Mónica Herrera', rating: 5, comment: 'Las mejores carnes de la región.' }
+                ]
+            },
+            'restaurante-2': {
+                address: 'Carrera 20 #12-34, Lomitas',
+                hours: 'Martes a Domingo: 12:00 PM - 10:00 PM<br>Lunes: Cerrado',
+                website: 'www.mariscosdelcaribe.com',
+                services: ['Mariscos frescos', 'Platos del mar', 'Ceviches', 'Reservas recomendadas'],
+                reviews: [
+                    { name: 'Ricardo Peña', rating: 5, comment: 'Los mariscos más frescos y deliciosos.' },
+                    { name: 'Adriana Castro', rating: 5, comment: 'Experiencia gastronómica excepcional.' }
+                ]
+            },
+            'restaurante-3': {
+                address: 'Avenida 25 #45-67, Lomitas',
+                hours: 'Lunes a Domingo: 12:00 PM - 11:00 PM',
+                website: 'www.trattoriaitaliana.com',
+                services: ['Cocina italiana', 'Pastas artesanales', 'Pizzas', 'Vinos importados'],
+                reviews: [
+                    { name: 'Federico Rojas', rating: 4, comment: 'Auténtica cocina italiana en Lomitas.' }
+                ]
+            },
+            'otros-1': {
+                address: 'Calle 35 #56-78, Lomitas',
+                hours: 'Lunes a Sábado: 9:00 AM - 7:00 PM<br>Domingos: 10:00 AM - 5:00 PM',
+                website: 'www.barberiaelestilo.com',
+                services: ['Cortes de cabello', 'Arreglo de barba', 'Tratamientos', 'Cita previa'],
+                reviews: [
+                    { name: 'Sebastián López', rating: 4, comment: 'Muy buenos cortes y atención personalizada.' }
+                ]
+            },
+            'otros-2': {
+                address: 'Carrera 8 #90-12, Lomitas',
+                hours: 'Lunes a Sábado: 8:00 AM - 6:00 PM',
+                website: 'www.lavanderiaexpress.com',
+                services: ['Lavandería', 'Tintorería', 'Servicio a domicilio', 'Limpieza express'],
+                reviews: [
+                    { name: 'Natalia Gómez', rating: 4, comment: 'Servicio confiable y ropa muy bien cuidada.' }
+                ]
+            },
+            'otros-3': {
+                address: 'Avenida 30 #78-90, Lomitas',
+                hours: 'Lunes a Sábado: 8:00 AM - 6:00 PM',
+                website: 'www.tallermecanicorapido.com',
+                services: ['Reparación de vehículos', 'Mantenimiento', 'Diagnóstico', 'Servicio express'],
+                reviews: [
+                    { name: 'Oscar Medina', rating: 5, comment: 'Mecánicos muy profesionales y servicio rápido.' },
+                    { name: 'Claudia Ríos', rating: 4, comment: 'Confiable para el mantenimiento de mi carro.' }
+                ]
+            }
+        };
+
+        // Función para cargar detalles adicionales del negocio
+        function loadAdditionalDetails(businessId) {
+            const details = businessDetails[businessId];
+            if (!details) return;
+
+            // Actualizar información de contacto
+            if (document.getElementById('contactPhone')) {
+                const business = getBusinessById(businessId);
+                document.getElementById('contactPhone').textContent = business ? business.phone : '-';
+            }
+            if (document.getElementById('contactAddress')) {
+                document.getElementById('contactAddress').innerHTML = details.address;
+            }
+            if (document.getElementById('contactHours')) {
+                document.getElementById('contactHours').innerHTML = details.hours;
+            }
+            if (document.getElementById('contactWebsite')) {
+                document.getElementById('contactWebsite').textContent = details.website;
+            }
+
+            // Cargar servicios
+            if (document.getElementById('servicesList')) {
+                document.getElementById('servicesList').innerHTML = details.services.map(service => 
+                    `<li><i class="fas fa-check" style="color: #667eea; margin-right: 8px;"></i>${service}</li>`
+                ).join('');
+            }
+
+            // Cargar reseñas
+            if (document.getElementById('reviewsList')) {
+                document.getElementById('reviewsList').innerHTML = details.reviews.map(review => `
+                    <div style="background: white; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong>${review.name}</strong>
+                            <div style="color: #ffd700;">${generateStars(review.rating)}</div>
+                        </div>
+                        <p style="color: #666; margin: 0;">${review.comment}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Sobrescribir la función loadBusinessDetail para incluir detalles adicionales
+        const originalLoadBusinessDetail = loadBusinessDetail;
+        loadBusinessDetail = function(businessId) {
+            originalLoadBusinessDetail(businessId);
+            loadAdditionalDetails(businessId);
+        };
+    </script>
+</body>
+</html>
