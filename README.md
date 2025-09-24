@@ -76,10 +76,16 @@ directoriolomitas/
 
 ## 📱 Características Responsive
 
-- Diseño adaptativo para móviles, tablets y desktop
-- Menú de navegación colapsable
-- Grid layouts que se ajustan al tamaño de pantalla
-- Optimización de imágenes y elementos
+- **Diseño adaptativo completo** para móviles, tablets y desktop
+- **Menú de navegación colapsable** en dispositivos móviles
+- **Grid layouts flexibles** que se ajustan al tamaño de pantalla
+- **Página de negocio optimizada** para móviles con layout vertical
+- **Optimización de imágenes y elementos** para carga rápida
+- **Puntos de quiebre**:
+  - Desktop: > 1024px
+  - Tablet: 769px - 1024px  
+  - Móvil: 481px - 768px
+  - Móvil pequeño: ≤ 480px
 
 ## 🎨 Diseño
 
@@ -113,6 +119,7 @@ Cada negocio incluye:
 3. Haz clic en cualquier negocio para ver su información detallada
 4. Usa la barra de búsqueda para encontrar negocios específicos
 5. Navega entre páginas usando los enlaces de navegación
+6. **Prueba el responsive**: Abre `test-responsive.html` para verificar el diseño en diferentes dispositivos
 
 ## 🔧 Personalización
 

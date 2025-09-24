@@ -291,6 +291,27 @@ footer {
 }
 
 /* Responsive Design */
+/* Tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .business-hero {
+        gap: 2.5rem;
+    }
+    
+    .business-logo-large {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .business-details h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-info {
+        padding: 1.8rem;
+    }
+}
+
+/* Móviles */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -316,6 +337,166 @@ footer {
     
     .businesses-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* Responsive para página del negocio */
+    .business-hero {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center;
+    }
+    
+    .business-logo-large {
+        width: 150px !important;
+        height: 150px !important;
+        margin: 0 auto 1rem !important;
+    }
+    
+    .business-details h1 {
+        font-size: 2rem !important;
+    }
+    
+    .business-details .phone {
+        font-size: 1.1rem !important;
+    }
+    
+    .contact-main {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.8rem !important;
+    }
+    
+    .contact-info {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .map-placeholder {
+        height: 250px !important;
+    }
+    
+    .map-icon {
+        font-size: 2.5rem !important;
+    }
+    
+    .map-title {
+        font-size: 1rem !important;
+    }
+    
+    .map-subtitle {
+        font-size: 0.85rem !important;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .business-detail {
+        padding: 60px 0 !important;
+    }
+    
+    .container {
+        padding: 0 15px !important;
+    }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+    .business-hero {
+        gap: 1.5rem !important;
+    }
+    
+    .business-logo-large {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .business-details h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .business-details .category {
+        font-size: 1rem !important;
+    }
+    
+    .business-details .phone {
+        font-size: 1rem !important;
+    }
+    
+    .contact-main {
+        gap: 0.5rem !important;
+    }
+    
+    .phone-text {
+        font-size: 0.9rem !important;
+    }
+    
+    .business-details .description {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .contact-info {
+        padding: 1rem !important;
+        border-radius: 10px !important;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .contact-info p {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .contact-info i {
+        width: 16px !important;
+        margin-right: 8px !important;
+    }
+    
+    .business-detail {
+        padding: 40px 0 !important;
+    }
+    
+    .back-button {
+        padding: 8px 16px !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Mejorar el mapa en móviles */
+    .map-placeholder {
+        height: 200px !important;
+    }
+    
+    .map-icon {
+        font-size: 2rem !important;
+    }
+    
+    .map-title {
+        font-size: 0.9rem !important;
+    }
+    
+    .map-subtitle {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Mejorar las reseñas en móviles */
+    .contact-info div[style*="background: white"] {
+        padding: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .contact-info div[style*="background: white"] strong {
+        font-size: 0.9rem !important;
+    }
+    
+    .contact-info div[style*="background: white"] p {
+        font-size: 0.85rem !important;
+        margin: 0.3rem 0 0 0 !important;
     }
 }
 
@@ -423,6 +604,50 @@ footer {
     color: #666;
     line-height: 1.8;
     margin-bottom: 2rem;
+}
+
+.contact-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.phone-text {
+    word-break: break-all;
+}
+
+.map-placeholder {
+    background: #f0f0f0;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.map-content {
+    text-align: center;
+}
+
+.map-icon {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.map-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.map-subtitle {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
 }
 
 .contact-info {

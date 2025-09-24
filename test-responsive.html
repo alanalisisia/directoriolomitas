@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Responsive - Directorio Lomitas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .test-info {
+            background: #e3f2fd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screen-size {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen-size" id="screenSize">Ancho: <span id="width">0</span>px</div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-store"></i> Directorio Lomitas</h2>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#destacados" class="nav-link">Destacados</a>
+                    <a href="index.html#categorias" class="nav-link active">Categorías</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="business-detail">
+            <div class="container">
+                <div class="test-info">
+                    <h3><i class="fas fa-info-circle"></i> Página de Prueba Responsive</h3>
+                    <p>Esta página simula la página individual de un negocio para probar el diseño responsive.</p>
+                    <p><strong>Puntos de quiebre:</strong></p>
+                    <ul>
+                        <li><strong>Desktop:</strong> > 1024px</li>
+                        <li><strong>Tablet:</strong> 769px - 1024px</li>
+                        <li><strong>Móvil:</strong> 481px - 768px</li>
+                        <li><strong>Móvil pequeño:</strong> ≤ 480px</li>
+                    </ul>
+                </div>
+                
+                <a href="javascript:history.back()" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver
+                </a>
+                
+                <div class="business-hero">
+                    <div class="business-logo-large">
+                        <img src="img/restaurante-1.png" alt="Restaurante La Parrilla" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                    </div>
+                    <div class="business-details">
+                        <h1>Restaurante La Parrilla</h1>
+                        <p class="category">Restaurante</p>
+                        <div class="contact-main">
+                            <p class="phone">
+                                <i class="fas fa-phone"></i>
+                                <span class="phone-text">+57 300 345 6789</span>
+                            </p>
+                            <div class="business-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">(4.7)</span>
+                            </div>
+                        </div>
+                        <p class="description">
+                            Carnes a la parrilla, platos típicos colombianos. Ambiente familiar y acogedor con los mejores cortes de carne y acompañamientos tradicionales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-info-circle"></i> Información de Contacto</h3>
+                    <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> +57 300 345 6789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle 40 #78-90, Lomitas</p>
+                    <p><i class="fas fa-clock"></i> <strong>Horarios:</strong> Lunes a Domingo: 12:00 PM - 11:00 PM</p>
+                    <p><i class="fas fa-globe"></i> <strong>Sitio Web:</strong> www.restaurantelaparrilla.com</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-star"></i> Servicios Destacados</h3>
+                    <ul>
+                        <li><i class="fas fa-check" style="color: #667eea; margin-right: 8px;"></i>Carnes a la parrilla</li>
+                        <li><i class="fas fa-check" style="color: #667eea; margin-right: 8px;"></i>Platos típicos</li>
+                        <li><i class="fas fa-check" style="color: #667eea; margin-right: 8px;"></i>Ambiente familiar</li>
+                        <li><i class="fas fa-check" style="color: #667eea; margin-right: 8px;"></i>Reservas</li>
+                    </ul>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-marked-alt"></i> Ubicación</h3>
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <i class="fas fa-map-marker-alt map-icon"></i>
+                            <p class="map-title">Mapa interactivo del negocio</p>
+                            <p class="map-subtitle">La ubicación exacta se mostrará aquí</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-comments"></i> Comentarios y Reseñas</h3>
+                    <div style="background: white; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong>Alejandro Vargas</strong>
+                            <div style="color: #ffd700;">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin: 0;">Excelente comida y ambiente familiar.</p>
+                    </div>
+                    <div style="background: white; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong>Mónica Herrera</strong>
+                            <div style="color: #ffd700;">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                        </div>
+                        <p style="color: #666; margin: 0;">Las mejores carnes de la región.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Directorio Comercial Lomitas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mostrar el tamaño de pantalla actual
+        function updateScreenSize() {
+            const width = window.innerWidth;
+            document.getElementById('width').textContent = width;
+        }
+
+        window.addEventListener('resize', updateScreenSize);
+        updateScreenSize();
+    </script>
+</body>
+</html>
